@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FaceBadge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <div>
+        <h1>FaceBadge</h1>
+        <p class="sub" id="eventLine">Loading event…</p>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="enroll" aria-selected="true">1. Register</button>
+      <button role="tab" data-tab="scan" aria-selected="false">2. Scan</button>
+      <button role="tab" data-tab="inbox" aria-selected="false">3. Who scanned me <span id="inboxBadge" class="badge" hidden>0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <p id="modelStatus" class="status">Loading face models on this device…</p>
+
+    <!-- ENROLL -->
+    <section id="tab-enroll" class="panel">
+      <div id="enrollDone" class="card ok" hidden>
+        <h2>You are enrolled</h2>
+        <p>Registered attendees can now find your profile by scanning your face. Every scan appears under "Who scanned me".</p>
+        <button id="withdrawBtn" class="ghost danger">Withdraw consent and delete my face template</button>
+      </div>
+
+      <form id="enrollForm" class="card" autocomplete="off">
+        <h2>Register for FaceBadge</h2>
+        <p class="hint">Only registered attendees can be recognized. Your photo never leaves this phone. Only a 128-number face template is sent, and it is deleted when the event ends.</p>
+
+        <div class="grid2">
+          <label>Full name<input name="fullName" required maxlength="80" placeholder="Manish Gupta"></label>
+          <label>Role<input name="role" maxlength="120" placeholder="Senior AI Solution Architect"></label>
+          <label>Organization<input name="organization" maxlength="120" placeholder="Design Laboratory Inc."></label>
+          <label>LinkedIn URL<input name="linkedin" maxlength="200" placeholder="https://www.linkedin.com/in/your-id"></label>
+        </div>
+
+        <fieldset class="consent">
+          <legend>When a registered attendee scans me, show</legend>
+          <label class="check"><input type="radio" name="mode" value="everyone" checked> My name, role, organization and LinkedIn (everyone registered)</label>
+          <label class="check"><input type="radio" name="mode" value="agent"> Let my AI agent decide using my rule below</label>
+          <label class="check"><input type="radio" name="mode" value="name"> My name only</label>
+        </fieldset>
+        <label>My sharing rule for the agent (plain English)
+          <textarea name="policyText" rows="3" maxlength="600" placeholder="Share my LinkedIn with AI researchers, governance professionals and recruiters for senior AI roles. Sales contacts get my name only."></textarea>
+        </label>
+
+        <div class="camwrap">
+          <video id="enrollVideo" playsinline muted></video>
+          <canvas id="enrollOverlay"></canvas>
+        </div>
+        <button type="button" id="startEnrollCam" class="ghost">Start camera</button>
+
+        <fieldset class="consent">
+          <legend>Consent</legend>
+          <label class="check"><input type="checkbox" name="consentBio" required> I agree that a face template (not a photo) is created from my selfie so registered attendees at this event can find my profile by scanning me. It is deleted when the event ends or when I withdraw.</label>
+          <label class="check"><input type="checkbox" name="consentRules" required> I understand that every scan of me is logged with the scanner's registered identity, that I can block people, and that I can withdraw at any time.</label>
+        </fieldset>
+
+        <button type="submit" id="enrollBtn" class="primary" disabled>Capture my face and register</button>
+        <p id="enrollMsg" class="msg" role="status"></p>
+      </form>
+    </section>
+
+    <!-- INBOX -->
+    <section id="tab-inbox" class="panel" hidden>
+      <div class="card">
+        <h2>Who scanned me</h2>
+        <p class="hint">Every scan of your face, with the scanner's registered name. Block anyone you do not want to share with.</p>
+        <div id="inboxList" class="list"><p class="empty">Register first. Scans of you appear here.</p></div>
+      </div>
+    </section>
+
+    <!-- SCAN -->
+    <section id="tab-scan" class="panel" hidden>
+      <div class="card">
+        <h2>Scan a registered attendee</h2>
+        <p class="hint">Register first. Then point your camera at one person, like scanning a barcode. Only the closest face is checked, and only registered attendees can be found. Your registered name is shown to the person you scan.</p>
+        <label>Why do you want to connect? (optional)<input id="reqPurpose" maxlength="300" placeholder="Enjoyed your talk on EU AI Act conformity"></label>
+        <div class="camwrap">
+          <video id="scanVideo" playsinline muted></video>
+          <canvas id="scanOverlay"></canvas>
+          <div id="scanReticle" class="reticle" aria-hidden="true"></div>
+        </div>
+        <div class="row">
+          <button id="scanBtn" class="primary" disabled>Start scanning</button>
+          <span id="scanState" class="msg" role="status"></span>
+        </div>
+        <div id="scanResult"></div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <details>
+        <summary>How this protects people</summary>
+        <ul>
+          <li><b>Consent once, at registration.</b> Only people who registered with consent can be found. Everyone else is never matched.</li>
+          <li><b>On-device first.</b> Video frames stay on the phone. Only the closest face becomes a template; other faces are masked and dropped.</li>
+          <li><b>Verified scanners.</b> Only registered attendees can scan, and every scan is shown to the person scanned.</li>
+          <li><b>Your choice of sharing.</b> Everyone, an AI agent applying your rule, or name only.</li>
+          <li><b>Block and withdraw.</b> Block any scanner, or withdraw to delete your template at once. All data is wiped when the event ends.</li>
+        </ul>
+      </details>
+    </footer>
+  </main>
+
+  <script src="vendor/face-api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

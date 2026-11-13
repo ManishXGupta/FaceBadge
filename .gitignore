@@ -1,0 +1,4 @@
+node_modules/
+e2e-output/
+*.y4m
+.env

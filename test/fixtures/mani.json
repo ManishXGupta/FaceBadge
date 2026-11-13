@@ -1,0 +1,13 @@
+{
+  "profile": {
+    "fullName": "Manish Gupta",
+    "role": "Senior AI Solution Architect and AI Governance Lead",
+    "organization": "Design Laboratory Inc.",
+    "linkedin": "https://www.linkedin.com/in/manish-gupta-9a871a10"
+  },
+  "policy": {
+    "text": "Share my LinkedIn with AI researchers, AI governance professionals, IEEE members and recruiters for senior AI roles. For sales pitches or unclear purposes, share my first name only.",
+    "maxTier": 3,
+    "autoApproveUpTo": 0
+  }
+}

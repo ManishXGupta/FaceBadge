@@ -1,0 +1,150 @@
+{
+  "generatedAt": "2026-11-12T14:42:35.488Z",
+  "note": "synthetic templates; see header",
+  "partA": {
+    "setup": {
+      "registered": 500,
+      "registeredLookalikePairs": 15,
+      "genuineProbes": 2000,
+      "unregisteredProbes": 2000,
+      "unregisteredLookalikeShare": 0.05
+    },
+    "distances": {
+      "genuineMedian": 0.414,
+      "genuineP95": 0.46,
+      "unregisteredNearestMedian": 0.718,
+      "unregisteredNearestP5": 0.62,
+      "lookalikePairMedian": 0.472
+    },
+    "sweep": [
+      {
+        "tau": 0.4,
+        "delta": 0,
+        "trueMatchPct": 29.9,
+        "wrongPersonPct": 0,
+        "ambiguousPct": 0,
+        "noMatchPct": 70.1,
+        "unregisteredMatchedPct": 0
+      },
+      {
+        "tau": 0.4,
+        "delta": 0.05,
+        "trueMatchPct": 29.6,
+        "wrongPersonPct": 0,
+        "ambiguousPct": 0.3,
+        "noMatchPct": 70.1,
+        "unregisteredMatchedPct": 0
+      },
+      {
+        "tau": 0.45,
+        "delta": 0,
+        "trueMatchPct": 91.2,
+        "wrongPersonPct": 0.05,
+        "ambiguousPct": 0,
+        "noMatchPct": 8.8,
+        "unregisteredMatchedPct": 0.15
+      },
+      {
+        "tau": 0.45,
+        "delta": 0.05,
+        "trueMatchPct": 89.7,
+        "wrongPersonPct": 0,
+        "ambiguousPct": 1.6,
+        "noMatchPct": 8.8,
+        "unregisteredMatchedPct": 0.15
+      },
+      {
+        "tau": 0.5,
+        "delta": 0,
+        "trueMatchPct": 99.7,
+        "wrongPersonPct": 0.05,
+        "ambiguousPct": 0,
+        "noMatchPct": 0.3,
+        "unregisteredMatchedPct": 1.3
+      },
+      {
+        "tau": 0.5,
+        "delta": 0.05,
+        "trueMatchPct": 97.8,
+        "wrongPersonPct": 0,
+        "ambiguousPct": 1.9,
+        "noMatchPct": 0.3,
+        "unregisteredMatchedPct": 1.3
+      },
+      {
+        "tau": 0.55,
+        "delta": 0,
+        "trueMatchPct": 100,
+        "wrongPersonPct": 0.05,
+        "ambiguousPct": 0,
+        "noMatchPct": 0,
+        "unregisteredMatchedPct": 4.15
+      },
+      {
+        "tau": 0.55,
+        "delta": 0.05,
+        "trueMatchPct": 98.1,
+        "wrongPersonPct": 0,
+        "ambiguousPct": 1.9,
+        "noMatchPct": 0,
+        "unregisteredMatchedPct": 4.1
+      },
+      {
+        "tau": 0.6,
+        "delta": 0,
+        "trueMatchPct": 100,
+        "wrongPersonPct": 0.05,
+        "ambiguousPct": 0,
+        "noMatchPct": 0,
+        "unregisteredMatchedPct": 4.95
+      },
+      {
+        "tau": 0.6,
+        "delta": 0.05,
+        "trueMatchPct": 98.1,
+        "wrongPersonPct": 0,
+        "ambiguousPct": 1.9,
+        "noMatchPct": 0,
+        "unregisteredMatchedPct": 4.9
+      }
+    ]
+  },
+  "partB": {
+    "setup": {
+      "attendees": 100,
+      "modes": {
+        "everyone": 47,
+        "agent": 38,
+        "name": 15
+      },
+      "scans": 1000,
+      "blockedPairs": 3
+    },
+    "counts": {
+      "registered": 851,
+      "unregistered": 149,
+      "released": 837,
+      "correctPerson": 837,
+      "wrongPerson": 0,
+      "noMatch": 151,
+      "ambiguous": 0,
+      "unregisteredReleased": 0,
+      "blockedPairs": 12,
+      "blockedHonored": 12,
+      "logged": 849,
+      "tier": {
+        "0": 12,
+        "1": 428,
+        "3": 409
+      }
+    },
+    "sharingMatchesRegistrationChoicePct": 100,
+    "logEntries": 849,
+    "logComplete": true,
+    "latencyMs": {
+      "p50": 0.54,
+      "p95": 0.73
+    },
+    "templatesDeletedAtClose": 100
+  }
+}

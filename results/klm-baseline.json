@@ -1,0 +1,176 @@
+{
+  "operators": {
+    "K": 0.28,
+    "P": 1.1,
+    "M": 1.35
+  },
+  "qr": {
+    "steps": 11,
+    "taps": 8,
+    "people": 2,
+    "ownerSteps": 4,
+    "ownerSeconds": 7.09,
+    "totalSeconds": 20.74
+  },
+  "face": {
+    "steps": 7,
+    "taps": 6,
+    "people": 1,
+    "ownerSteps": 0,
+    "ownerSeconds": 0,
+    "totalSeconds": 13.68
+  },
+  "qrSteps": [
+    [
+      "Owner",
+      "Decide to share",
+      [
+        "M"
+      ]
+    ],
+    [
+      "Owner",
+      "Unlock phone",
+      [
+        "K"
+      ]
+    ],
+    [
+      "Owner",
+      "Open LinkedIn app",
+      [
+        "M",
+        "P",
+        "K"
+      ]
+    ],
+    [
+      "Owner",
+      "Open QR code screen",
+      [
+        "M",
+        "P",
+        "K"
+      ]
+    ],
+    [
+      "Scanner",
+      "Decide to connect",
+      [
+        "M"
+      ]
+    ],
+    [
+      "Scanner",
+      "Unlock phone",
+      [
+        "K"
+      ]
+    ],
+    [
+      "Scanner",
+      "Open LinkedIn app",
+      [
+        "M",
+        "P",
+        "K"
+      ]
+    ],
+    [
+      "Scanner",
+      "Open QR code screen",
+      [
+        "M",
+        "P",
+        "K"
+      ]
+    ],
+    [
+      "Scanner",
+      "Switch to Scan tab",
+      [
+        "P",
+        "K"
+      ]
+    ],
+    [
+      "Scanner",
+      "Aim camera at the code",
+      [
+        "M",
+        "P"
+      ]
+    ],
+    [
+      "Scanner",
+      "Tap Connect",
+      [
+        "M",
+        "P",
+        "K"
+      ]
+    ]
+  ],
+  "faceSteps": [
+    [
+      "Scanner",
+      "Decide to connect",
+      [
+        "M"
+      ]
+    ],
+    [
+      "Scanner",
+      "Unlock phone",
+      [
+        "K"
+      ]
+    ],
+    [
+      "Scanner",
+      "Open event app",
+      [
+        "M",
+        "P",
+        "K"
+      ]
+    ],
+    [
+      "Scanner",
+      "Tap Scan",
+      [
+        "P",
+        "K"
+      ]
+    ],
+    [
+      "Scanner",
+      "Aim at the person and take photo",
+      [
+        "M",
+        "P",
+        "P",
+        "K"
+      ]
+    ],
+    [
+      "Scanner",
+      "Tap Open LinkedIn and connect",
+      [
+        "M",
+        "P",
+        "K"
+      ]
+    ],
+    [
+      "Scanner",
+      "Tap Connect on LinkedIn",
+      [
+        "P",
+        "K"
+      ]
+    ]
+  ],
+  "savedSeconds": 7.06,
+  "savedPct": 34
+}
